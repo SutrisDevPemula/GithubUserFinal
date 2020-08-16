@@ -20,6 +20,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver
+            android:name=".notification.NotificationReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <provider
             android:name=".provider.UserProvider"
             android:authorities="com.developer2t.mygithubuserfinal"
