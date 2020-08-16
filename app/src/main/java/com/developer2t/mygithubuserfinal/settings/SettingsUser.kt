@@ -36,7 +36,27 @@ class SettingsUser : AppCompatActivity() {
                 true
             }
 
-//            val btnDaily =
+            val btnDaily = findPreference<Preference>(
+                resources.getString(R.string.daily_remainder)
+            )
+            btnDaily?.setOnPreferenceChangeListener { _, newValue ->
+                if (newValue == true) {
+                    notificationReceiver.setRemainder(
+                        requireContext(),
+                        7,
+                        0,
+                        NotificationReceiver.ID_REMAINDER
+                    )
+                } else {
+                    notificationReceiver.cancelRemainder(
+                        requireContext(),
+                        NotificationReceiver.ID_REMAINDER
+                    )
+                }
+                true
+            }
+
+
         }
     }
 }
