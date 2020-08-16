@@ -2,7 +2,7 @@
     <string name="app_name">MyGithubUserFinal</string>
     <string name="UserName">Username</string>
     <string name="id_user">ID User</string>
-    <string name="favorite">Favorite</string>
+    <string name="favorite">kesukaan</string>
     <string name="images_user">User Image</string>
     <string name="title_activity_detail_user">DetailUser</string>
     <!-- Strings used for fragments for navigation -->
@@ -13,18 +13,18 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="company">Company</string>
-    <string name="location">Country</string>
-    <string name="repositori">repository</string>
-    <string name="followers">folowers</string>
-    <string name="followings">followings</string>
+    <string name="company">Perusahaan</string>
+    <string name="location">Negara</string>
+    <string name="repositori">repositori</string>
+    <string name="followers">Pengikut</string>
+    <string name="followings">Mengikuti</string>
     <string name="menu_search">Search</string>
-    <string name="menu_setting">Settings</string>
-    <string name="hint">Search User</string>
-    <string name="image_button_clear">Image button clear</string>
-    <string name="msg_delete_fav_success">Delete Success %1$s</string>
-    <string name="msg_delete_fav_failed">Delete Failed %1$s</string>
-    <string name="no_data_favorite_user">No data Movie Favorite</string>
+    <string name="menu_setting">Pengaturan</string>
+    <string name="hint">Cari User</string>
+    <string name="image_button_clear">Tombol hapus</string>
+    <string name="msg_delete_fav_success">Hapus Berhasil %1$s</string>
+    <string name="msg_delete_fav_failed">Hapus gagal %1$s</string>
+    <string name="no_data_favorite_user">Tidak ada user Favorite</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
