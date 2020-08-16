@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.developer2t.mygithubuserfinal.adapter.CardUserAdapter
-import com.developer2t.mygithubuserfinal.settings.SettingActivity
 import com.developer2t.mygithubuserfinal.settings.SettingsUser
 import com.developer2t.mygithubuserfinal.view.activity.FavoriteUser
 import com.developer2t.mygithubuserfinal.viewmodel.UserViewModel

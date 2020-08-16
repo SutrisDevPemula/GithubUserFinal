@@ -9,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
-
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
@@ -47,11 +46,8 @@ class NotificationReceiver : BroadcastReceiver() {
         val chanelId = "Channel_1"
         val channelName = "User Git"
 
-        val intent = if (notifId == ID_REMAINDER) {
-            Intent(context, MainActivity::class.java)
-        } else {
-            Intent(context, MainActivity::class.java)
-        }
+        val intent = Intent(context, MainActivity::class.java)
+
 
         val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 
@@ -124,10 +120,4 @@ class NotificationReceiver : BroadcastReceiver() {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-//    private fun currentDate(): String {
-//        val calendar = Calendar.getInstance()
-//        val date = calendar.time
-//        val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-//        return df.format(date)
-//    }
 }

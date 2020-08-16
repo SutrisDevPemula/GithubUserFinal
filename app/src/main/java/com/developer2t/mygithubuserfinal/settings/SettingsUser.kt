@@ -43,8 +43,8 @@ class SettingsUser : AppCompatActivity() {
                 if (newValue == true) {
                     notificationReceiver.setRemainder(
                         requireContext(),
-                        7,
-                        0,
+                        9,
+                        5,
                         NotificationReceiver.ID_REMAINDER
                     )
                 } else {

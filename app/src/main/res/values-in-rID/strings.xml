@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">MyGithubUserFinal</string>
-    <string name="UserName">Username</string>
+    <string name="UserName">Nama Pengguna</string>
     <string name="id_user">ID User</string>
     <string name="favorite">kesukaan</string>
     <string name="images_user">User Image</string>
-    <string name="title_activity_detail_user">DetailUser</string>
+    <string name="title_activity_detail_user">Detail User</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -18,7 +18,7 @@
     <string name="repositori">repositori</string>
     <string name="followers">Pengikut</string>
     <string name="followings">Mengikuti</string>
-    <string name="menu_search">Search</string>
+    <string name="menu_search">Cari</string>
     <string name="menu_setting">Pengaturan</string>
     <string name="hint">Cari User</string>
     <string name="image_button_clear">Tombol hapus</string>
@@ -41,13 +41,13 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="daily_remainder">Daily Remainder</string>
-    <string name="message_daily_remainder">Hi you haven\'t checked User today</string>
-    <string name="change_language">Change Language</string>
+    <string name="daily_remainder">Pengingat Harian</string>
+    <string name="message_daily_remainder">Hai, Anda belum memeriksa Pengguna hari ini</string>
+    <string name="change_language">Ubah Bahasa</string>
     <string name="title_activity_settings_user">SettingsUser</string>
-    <string name="language">Language</string>
-    <string name="change_language_summary">Change language setting</string>
+    <string name="language">Bahasa</string>
+    <string name="change_language_summary">Ubah pengaturan bahasa</string>
     <string name="notification">Notification</string>
-    <string name="on_daily_remainder">Daily remainder active every 9 AM</string>
-    <string name="off_daily_remainder">Daily remainder inactive</string>
+    <string name="on_daily_remainder">Pengingat harian aktif setiap jam 9 pagi</string>
+    <string name="off_daily_remainder">Pengingat harian tidak aktif</string>
 </resources>
