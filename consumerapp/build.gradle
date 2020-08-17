@@ -2,17 +2,18 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-android-extensions'
+
 androidExtensions {
     experimental = true
 }
-
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.developer2t.mygithubuserfinal"
+        applicationId "com.developer2t.consumerapp"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -36,6 +37,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -66,5 +68,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 }

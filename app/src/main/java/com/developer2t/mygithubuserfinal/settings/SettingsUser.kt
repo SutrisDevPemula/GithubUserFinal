@@ -44,7 +44,7 @@ class SettingsUser : AppCompatActivity() {
                     notificationReceiver.setRemainder(
                         requireContext(),
                         9,
-                        5,
+                        0,
                         NotificationReceiver.ID_REMAINDER
                     )
                 } else {

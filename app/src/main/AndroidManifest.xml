@@ -20,19 +20,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <receiver
             android:name=".notification.NotificationReceiver"
             android:enabled="true"
             android:exported="true" />
-
-        <provider
-            android:name=".provider.UserProvider"
-            android:authorities="com.developer2t.mygithubuserfinal"
-            android:enabled="true"
-            android:exported="true"
-            android:readPermission="com.developer2t.mygithubuserfinal.READ_DATABASE"
-            android:writePermission="com.developer2t.mygithubuserfinal.WRITE_DATABASE" />
 
         <activity
             android:name=".settings.SettingsUser"
@@ -44,6 +35,7 @@
         </activity>
 
         <activity android:name=".view.activity.FavoriteUser" />
+
         <activity
             android:name=".view.activity.DetailUser"
             android:label="@string/title_activity_detail_user"
@@ -55,6 +47,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".provider.UserContentProvider"
+            android:authorities="com.developer2t.mygithubuserfinal"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.developer2t.mygithubuserfinal.READ_DATABASE"
+            android:writePermission="com.developer2t.mygithubuserfinal.WRITE_DATABASE"/>
     </application>
 
 </manifest>

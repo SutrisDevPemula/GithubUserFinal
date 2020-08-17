@@ -80,7 +80,7 @@ class CardUserAdapter(private val context: Context) :
                     } else {
                         Toast.makeText(
                             itemView.context,
-                            "favorit gagal ditambahkan ${users.username}",
+                            "${users.username} sudah ada dalam daftar favorite",
                             Toast.LENGTH_SHORT
                         ).show()
                     }

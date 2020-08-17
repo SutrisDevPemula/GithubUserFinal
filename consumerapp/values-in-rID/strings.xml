@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">MyGithubUserFinal</string>
+    <string name="UserName">Nama Pengguna</string>
+    <string name="id_user">ID User</string>
+    <string name="favorite">kesukaan</string>
+    <string name="images_user">User Image</string>
+    <string name="title_activity_detail_user">Detail User</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="company">Perusahaan</string>
+    <string name="location">Negara</string>
+    <string name="repositori">repositori</string>
+    <string name="followers">Pengikut</string>
+    <string name="followings">Mengikuti</string>
+    <string name="menu_search">Cari</string>
+    <string name="menu_setting">Pengaturan</string>
+    <string name="hint">Cari User</string>
+    <string name="image_button_clear">Tombol hapus</string>
+    <string name="msg_delete_fav_success">Hapus Berhasil %1$s</string>
+    <string name="msg_delete_fav_failed">Hapus gagal %1$s</string>
+    <string name="no_data_favorite_user">Tidak ada user Favorite</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="daily_remainder">Pengingat Harian</string>
+    <string name="message_daily_remainder">Hai, Anda belum memeriksa Pengguna hari ini</string>
+    <string name="change_language">Ubah Bahasa</string>
+    <string name="title_activity_settings_user">SettingsUser</string>
+    <string name="language">Bahasa</string>
+    <string name="change_language_summary">Ubah pengaturan bahasa</string>
+    <string name="notification">Notification</string>
+    <string name="on_daily_remainder">Pengingat harian aktif setiap jam 9 pagi</string>
+    <string name="off_daily_remainder">Pengingat harian tidak aktif</string>
+</resources>

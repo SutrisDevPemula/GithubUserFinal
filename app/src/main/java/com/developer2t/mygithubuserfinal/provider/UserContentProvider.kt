@@ -10,7 +10,8 @@ import com.developer2t.mygithubuserfinal.database.DatabaseContract
 import com.developer2t.mygithubuserfinal.database.DatabaseContract.AUTHORITY
 import com.developer2t.mygithubuserfinal.database.UserHelper
 
-class UserProvider : ContentProvider() {
+class UserContentProvider : ContentProvider() {
+
     companion object {
         private const val TABLE_USER = DatabaseContract.UserColumns.TABLE_NAME
         private val CONTENT_URI_USER = DatabaseContract.UserColumns.CONTENT_URI
@@ -28,14 +29,10 @@ class UserProvider : ContentProvider() {
         }
     }
 
-    override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        val added: Long = when (USER) {
-            sUriMatcher.match(uri) -> userHelper.insert(values)
-            else -> 0
-        }
-
-        context?.contentResolver?.notifyChange(CONTENT_URI_USER, null)
-        return Uri.parse("$CONTENT_URI_USER/$added")
+    override fun onCreate(): Boolean {
+        userHelper = UserHelper.getInstance(context as Context)
+        userHelper.open()
+        return true
     }
 
     override fun query(
@@ -50,24 +47,29 @@ class UserProvider : ContentProvider() {
         return cursor
     }
 
-    override fun onCreate(): Boolean {
-        userHelper = UserHelper.getInstance(context as Context)
-        userHelper.open()
+    override fun getType(uri: Uri): String? {
+        return null
+    }
 
-        return true
+    override fun insert(uri: Uri, values: ContentValues?): Uri? {
+        val added: Long = when (USER) {
+            sUriMatcher.match(uri) -> userHelper.insert(values)
+            else -> 0
+        }
+        context?.contentResolver?.notifyChange(CONTENT_URI_USER, null)
+        return Uri.parse("$CONTENT_URI_USER/$added")
     }
 
     override fun update(
         uri: Uri, values: ContentValues?, selection: String?,
         selectionArgs: Array<String>?
     ): Int {
-        val updated: Int = when (USER_ID) {
+        val update: Int = when (USER_ID) {
             sUriMatcher.match(uri) -> userHelper.update(uri.lastPathSegment.toString(), values)
             else -> 0
         }
-
         context?.contentResolver?.notifyChange(CONTENT_URI_USER, null)
-        return updated
+        return update
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
@@ -80,7 +82,5 @@ class UserProvider : ContentProvider() {
         return deleted
     }
 
-    override fun getType(uri: Uri): String? {
-        return null
-    }
+
 }
