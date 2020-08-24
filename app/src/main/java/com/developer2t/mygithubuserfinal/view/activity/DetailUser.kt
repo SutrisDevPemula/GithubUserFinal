@@ -1,9 +1,10 @@
 package com.developer2t.mygithubuserfinal.view.activity
 
+import android.content.ContentValues
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,11 +12,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.developer2t.mygithubuserfinal.R
 import com.developer2t.mygithubuserfinal.adapter.SectionPagerAdapter
+import com.developer2t.mygithubuserfinal.database.DatabaseContract
+import com.developer2t.mygithubuserfinal.database.UserHelper
 import com.developer2t.mygithubuserfinal.model.User
 import com.developer2t.mygithubuserfinal.viewmodel.ViewModelUserDetail
 import kotlinx.android.synthetic.main.content_detail_user.*
 import kotlinx.android.synthetic.main.content_detail_user.tv_username
-import kotlinx.android.synthetic.main.list_user.*
 
 class DetailUser : AppCompatActivity() {
 
@@ -30,10 +32,6 @@ class DetailUser : AppCompatActivity() {
         setContentView(R.layout.activity_detail_user)
 //        setSupportActionBar(findViewById(R.id.toolbar))
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
 
         val usernameQ = intent.getStringExtra(EXTRA_USER)
 
@@ -49,7 +47,40 @@ class DetailUser : AppCompatActivity() {
                 setDetailUser(detailUser)
                 showLoading(false)
             }
+
         })
+
+
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+            val user = User()
+            val userHelper = UserHelper(this@DetailUser)
+            userHelper.open()
+
+            val values = ContentValues()
+            values.put(DatabaseContract.UserColumns.ID, user.id)
+            values.put(DatabaseContract.UserColumns.NAME, user.username)
+            values.put(DatabaseContract.UserColumns.PHOTO, user.images)
+
+            val result = userHelper.insert(values)
+            if (result > 0) {
+                Toast.makeText(
+                    this,
+                    "${user.username} berhasil ditambakan ke favorite",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    this,
+                    "${user.username} ini sudah ada di favorite",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            userHelper.close()
+        }
+
+
+
+
     }
 
     private fun showLoading(state: Boolean) {
@@ -60,11 +91,14 @@ class DetailUser : AppCompatActivity() {
         }
     }
 
+
+
     private fun setDetailUser(users: User) {
         Glide.with(this)
             .load(users.images)
             .apply(RequestOptions()).override(120, 120)
             .into(img_item_photo)
+
         tv_username.text = users.username
         tv_name.text = users.name
         tv_location.text = users.location

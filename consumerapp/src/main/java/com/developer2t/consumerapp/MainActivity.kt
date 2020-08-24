@@ -8,7 +8,6 @@ import android.os.HandlerThread
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.developer2t.consumerapp.adapter.CardUserFavAdapter
-import com.developer2t.consumerapp.database.DatabaseContract
 import com.developer2t.consumerapp.database.DatabaseContract.UserColumns.Companion.CONTENT_URI
 import com.developer2t.consumerapp.helper.MappingHelper
 import com.developer2t.consumerapp.model.User
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
             val deferredUser = async(Dispatchers.IO) {
                 val cursor = this@MainActivity.contentResolver.query(
-                    DatabaseContract.UserColumns.CONTENT_URI,
+                    CONTENT_URI,
                     null,
                     null,
                     null,
