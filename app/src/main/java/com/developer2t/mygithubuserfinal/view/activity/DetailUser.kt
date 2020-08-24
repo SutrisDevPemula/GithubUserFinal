@@ -75,7 +75,7 @@ class DetailUser : AppCompatActivity() {
             if (result > 1) {
                 Toast.makeText(
                     this,
-                    "${user.username} berhasil ditambakan ke favorite",
+                    "${user.username} berhasil ditambakan ke daftar favorite",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
