@@ -45,41 +45,11 @@ class DetailUser : AppCompatActivity() {
         vmUserDetail.getDetailUser().observe(this, Observer { detailUser ->
             if (detailUser != null) {
                 setDetailUser(detailUser)
+                addToFavorite(detailUser)
                 showLoading(false)
             }
 
         })
-
-
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            val user = User()
-            val userHelper = UserHelper(this@DetailUser)
-            userHelper.open()
-
-            val values = ContentValues()
-            values.put(DatabaseContract.UserColumns.ID, user.id)
-            values.put(DatabaseContract.UserColumns.NAME, user.username)
-            values.put(DatabaseContract.UserColumns.PHOTO, user.images)
-
-            val result = userHelper.insert(values)
-            if (result > 0) {
-                Toast.makeText(
-                    this,
-                    "${user.username} berhasil ditambakan ke favorite",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                Toast.makeText(
-                    this,
-                    "${user.username} ini sudah ada di favorite",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            userHelper.close()
-        }
-
-
-
 
     }
 
@@ -91,6 +61,33 @@ class DetailUser : AppCompatActivity() {
         }
     }
 
+    private fun addToFavorite (user : User) {
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+            val userHelper = UserHelper(this@DetailUser)
+            userHelper.open()
+
+            val values = ContentValues()
+            values.put(DatabaseContract.UserColumns.ID, user.id)
+            values.put(DatabaseContract.UserColumns.NAME, user.username)
+            values.put(DatabaseContract.UserColumns.PHOTO, user.images)
+
+            val result = userHelper.insert(values)
+            if (result > 1) {
+                Toast.makeText(
+                    this,
+                    "${user.username} berhasil ditambakan ke favorite",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    this,
+                    "User ini sudah ada di dalam favorite",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            userHelper.close()
+        }
+    }
 
 
     private fun setDetailUser(users: User) {
